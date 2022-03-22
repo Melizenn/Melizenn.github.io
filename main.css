@@ -1,0 +1,179 @@
+
+    /* Colors: #2EC2A6 / #5FE8CF / #A8E854 / #9C7628 / #E8B348 */
+    /* margin order: top right bottom left */
+
+    /* Include the padding and border in all element's total width and height */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inconsolata', Arial, Helvetica, sans-serif;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    /* Set the margins of text elements */
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0.5em 0 1em 0;
+    }
+
+    /* Style h1 for main */
+    .column.middle h1 {
+      font-size: 1.6em;
+      margin: 0 0 0.8em 20px;
+    }
+
+    /* Style h3 for main */
+    .column.middle h3 {
+      margin-left: 20px;
+    }
+
+    /* Style p for home and about*/
+    .home .column.middle p, .about .column.middle p {
+      padding: 0 40px 0 40px;
+    }
+
+    /* Justify text in paragraphs*/
+    p {
+      text-align: justify;
+    }
+
+    /* Remove the line under links */
+    a {
+      text-decoration: none;
+    }
+
+    /* Style the header */
+    .header {
+      margin: 1em;
+      margin-left: auto;
+      width: fit-content;
+      text-align: right;
+      background: white;
+      color: #333;
+    }
+
+    /* Style the first h1 occurence in the header to be left aligned and with no bottom margin */
+    .header h1:first-of-type {
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    /* Style the second h1 occurence in the header to have no top margin */
+    .header h1:not(:first-of-type) {
+      margin-top: 0;
+    }
+
+    /* Style the navmenu */
+    .navmenu {
+      text-align: right;
+      margin: 2.2em 1.1em 1.1em 1.1em;
+    }
+
+    /* Style the navmenu elements */
+    .navmenu a {
+      display: block;
+      margin-bottom: 0.2em;
+    }
+
+    /* Style the menu links */
+    .navmenu a:link, .submenu a:link,
+    .navmenu a:visited, .submenu a:link {
+      color: black;
+    }
+
+    /* Style the language selectors links */
+    .langselect a:link,
+    .langselect a:visited {
+      color: black;
+    }
+
+    /* Change color on hover and click for the buttons and menu items*/
+    .button:hover,
+    .langselect a:hover,
+    .navmenu a:hover, .submenu a:hover, html[lang='en'] #btn-en,
+    html[lang='fr'] #btn-fr {
+      background-color: white;
+      color: grey;
+    }
+
+    /* Make active body page underlined in the navmenu */
+    .home #home-btn, .portfolio #portfolio-btn, .dossier #dossier-btn, .about #about-btn {
+    text-decoration: underline;
+    }
+
+    /*FLEXBOX TEMPLATE START*/
+    /* Container for flexboxes */
+    .row {
+      display: -webkit-flex;
+      display: flex;
+    }
+
+    /* Create two unequal columns that sit next to each other */
+    .column {
+      padding: 10px 10px 10px 10px;
+      /* top right bottom left */
+    }
+
+    /* Left column */
+    .column.left {
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+    }
+
+    /* Left column */
+    .column.right {
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+    }
+
+    /* Middle column */
+    .column.middle {
+      -webkit-flex: 3;
+      -ms-flex: 3;
+      flex: 3;
+      padding-top: 5em;
+    }
+
+    /* Responsive layout - makes the columns stack on top of each other instead of next to each other */
+    @media (max-width: 600px) {
+      .row {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+
+      /* Lower middle column padding */
+      .column.middle {
+        padding-top: 0.5em;
+      }
+    }
+
+    /*FLEXBOX TEMPLATE END*/
+
+    /* Fix element overflow from containers; apply clearfix class to div */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* Style the footer */
+    .footer {
+      display: block;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      color: black;
+      text-align: center;
+      font-size: 12px;
+    }
